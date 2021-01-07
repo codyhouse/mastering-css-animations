@@ -1,4 +1,4 @@
-# Mastering CSS Animations (Templates)
+# 👨‍🎤 Mastering CSS Animations (Templates)
 
 Learn how to create engaging animations in CSS, from the basics to advanced interactions.
 
@@ -21,6 +21,13 @@ Launch your project on a development server:
 ```
 npm run gulp watch
 ```
+
+![How to launch project template using VSCode](how-to-launch-project.gif)
+
+⚠️ **Notes**: 
+
+1. If you don't have npm installed, you can get it from the [npmjs website](https://www.npmjs.com/get-npm).
+2. If you receive error messages while trying to run the `npm install` command, you may need to install [Git](https://git-scm.com/) on your device first.
 
 ## Sponsored by CodyHouse UI
 
