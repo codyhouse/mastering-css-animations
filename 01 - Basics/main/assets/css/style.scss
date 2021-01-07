@@ -3,3 +3,13 @@
 @import 'custom-style';
 @import 'components/**/*.scss';
 /*! purgecss end ignore */
+
+.obj {
+  position: relative;
+  z-index: 1;
+  background-color: lightgrey;
+}
+
+.obj--animated {
+  background-color: grey;
+}
