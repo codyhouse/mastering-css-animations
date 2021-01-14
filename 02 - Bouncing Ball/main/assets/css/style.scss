@@ -1,0 +1,79 @@
+@import '../../../node_modules/codyhouse-framework/main/assets/css/base';
+/*! purgecss start ignore */
+@import 'custom-style';
+@import 'components/**/*.scss';
+/*! purgecss end ignore */
+
+// --------------------------------
+
+// Bouncing Ball
+
+// --------------------------------
+
+:root {
+  --bouncing-loader-size: 128px;
+  --bouncing-loader-animation-duration: 0.8s;
+  --bouncing-loader-ball-size: calc(var(--bouncing-loader-size)/3);
+  --bouncing-loader-ball-end-position: calc(var(--bouncing-loader-size) - var(--bouncing-loader-ball-size));
+}
+
+.bouncing-loader {
+  width: var(--bouncing-loader-size);
+  height: var(--bouncing-loader-size);
+
+  position: relative;
+  display: inline-block;
+}
+
+.bouncing-loader__ball {
+  width: var(--bouncing-loader-ball-size);
+  height: var(--bouncing-loader-ball-size);
+
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+
+  background-color: var(--color-primary);
+  border-radius: 50%;
+
+  animation: bouncing-loader-ball-anim var(--bouncing-loader-animation-duration) infinite var(--ease-in);
+}
+
+.bouncing-loader__shadow {
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  width: var(--bouncing-loader-ball-size);
+  height: var(--bouncing-loader-ball-size);
+
+  background-color: hsla(0, 0%, 0%, 0.2);
+  border-radius: 50%;
+
+  transform: translateX(-50%) translateY(50%) scaleY(0.4) scaleX(1.2);
+  animation: bouncing-loader-shadow-anim var(--bouncing-loader-animation-duration) infinite var(--ease-in);
+}
+
+@keyframes bouncing-loader-ball-anim {
+  0%, 100% {
+    transform: translateX(-50%) translateY(0);
+  }
+
+  50% {
+    transform: translateX(-50%) translateY(var(--bouncing-loader-ball-end-position));
+    animation-timing-function: var(--ease-out);
+  }
+}
+
+@keyframes bouncing-loader-shadow-anim {
+  0%, 100% {
+    transform: translateX(-50%) translateY(50%) scaleY(0.4) scaleX(1.2);
+    background-color: hsla(0, 0%, 0%, 0.2);
+  }
+
+  50% {
+    transform: translateX(-50%) translateY(50%) scaleY(0.2) scaleX(0.6);
+    background-color: hsla(0, 0%, 0%, 0.5);
+    animation-timing-function: var(--ease-out);
+  }
+}
