@@ -5,6 +5,7 @@ Learn how to create engaging animations in CSS, from the basics to advanced inte
 Download the templates and follow the lessons on Youtube:
 
 - [Part 01 - Basics](https://youtu.be/JlDS3hNB_fg)
+- [Part 02 - Bouncing Ball](https://youtu.be/yYwF39nYhhw)
 
 ## How to use the templates
 
