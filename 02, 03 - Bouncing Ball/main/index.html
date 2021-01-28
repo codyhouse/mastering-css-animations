@@ -6,23 +6,18 @@
   <script>document.getElementsByTagName("html")[0].className += " js";</script>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
   <link id="codyframe" rel="stylesheet" href="assets/css/style.css">
-  <title>Part 04: Animated Buttons - Mastering CSS Animationse</title>
+  <title>Part 02/03: Bouncing Ball - Mastering CSS Animations</title>
 </head>
 <body>
-  <div class="container max-width-sm padding-y-xxl">
-    <ul class="flex flex-center gap-sm">
-      <li>
-        <button class="reset anim-btn-1">Learn More</button>
-      </li>
+  <div class="flex flex-center padding-y-xl">
+    <div class="bouncing-loader" role="alert">
+      <p class="sr-only">Content is loading...</p>
 
-      <!-- <li>
-        <a class="anim-btn-2" href="#0">Explore</a>
-      </li>
-
-      <li>
-        <a class="reset anim-btn-3" href="#0">Play</a>
-      </li> -->
-    </ul>
+      <div aria-hidden="true">
+        <div class="bouncing-loader__shadow"></div>
+        <div class="bouncing-loader__ball"></div>
+      </div>
+    </div>
   </div>
 <script src="assets/js/scripts.js"></script>
 </body>
