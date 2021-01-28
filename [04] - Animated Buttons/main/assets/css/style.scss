@@ -1,0 +1,19 @@
+@import '../../../node_modules/codyhouse-framework/main/assets/css/base';
+/*! purgecss start ignore */
+@import 'custom-style';
+@import 'components/**/*.scss';
+/*! purgecss end ignore */
+
+// --------------------------------
+
+// Animated Buttons
+
+// --------------------------------
+
+// v1
+.anim-btn-1 {
+  display: inline-flex;
+  line-height: 1;
+  padding: var(--space-xs) var(--space-md);
+  background-color: alpha(var(--color-contrast-higher), 0.2);
+}
