@@ -12,8 +12,255 @@
 
 // v1
 .anim-btn-1 {
+  position: relative;
   display: inline-flex;
+  justify-content: center;
+  align-items: center; // vertically align label + icon
+
+  padding: var(--space-xs) var(--space-sm);
+  background-color: lavender;
+  border-radius: 0.25em;
+  overflow: hidden;
+  clip-path: inset(0% 0% 0% 0% round 0.25em);
+
   line-height: 1;
-  padding: var(--space-xs) var(--space-md);
-  background-color: alpha(var(--color-contrast-higher), 0.2);
+  text-decoration: none;
+  color: darkslateblue;
+  transition: .3s;
+  @include fontSmooth;
+
+  cursor: pointer;
+
+  span, .icon-wrapper { // place label and icon above animated background
+    position: relative;
+    z-index: 2;
+  }
+
+  .icon {
+    display: block;
+    backface-visibility: hidden;
+    transition: .3s;
+  }
+
+  .icon:first-child {
+    color: darkslateblue;
+  }
+
+  .icon:last-child {
+    position: absolute;
+    top: 0;
+    left: 0;
+    opacity: 0;
+    color: lavender;
+    transform: translateY(100%);
+  }
+
+  &::after { // animated background
+    content: '';
+    position: absolute;
+    z-index: 1;
+    top: 50%;
+    left: -5%;
+    width: 110%;
+    height: 100%;
+    background-color: darkslateblue;
+    transform-origin: center bottom;
+    transform: skewY(10deg) scaleY(0);
+    transition: transform .3s;
+  }
+
+  &:hover {
+    color: lavender;
+
+    .icon:first-child {
+      opacity: 0;
+      transform: translateY(-100%);
+    }
+
+    .icon:last-child {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    &::after {
+      transform: skewY(0deg) scaleY(2);
+    }
+  }
+
+  &:focus {
+    outline: none;
+    box-shadow: 0 0 0 1px white, 0 0 0 3px darkslateblue;
+  }
+}
+
+// v2
+.anim-btn-2 {
+  position: relative;
+  padding: var(--space-xs) var(--space-sm);
+
+  line-height: 1;
+  font-size: 0.85em;
+  letter-spacing: 0.1em;
+  text-decoration: none;
+
+  span {
+    display: inline-flex;
+    clip-path: polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%);
+    padding: 0.25em;
+  }
+
+  em {
+    * {
+      color: darkslateblue;
+      display: inline-flex;
+      backface-visibility: hidden;
+      transition: transform .3s;
+    }
+
+    &:last-child {
+      position: absolute;
+
+      * {
+        transform: translateY(calc(100% + 0.5em));
+      }
+    }
+  }
+
+  &::before, &::after { // animated line
+    content: '';
+    position: absolute;
+    bottom: 0;
+    height: 2px;
+    left: 0;
+    width: 100%;
+  }
+
+  &::before { // bg
+    background-color: lavender;
+  }
+
+  &::after { // filling effect
+    background-color: darkslateblue;
+    transform: scaleX(0);
+    transition: transform .3s;
+    transform-origin: right center;
+  }
+
+  &:hover {
+    em {
+      *:nth-child(2) {
+        transition-delay: .05s;
+      }
+
+      *:nth-child(3) {
+        transition-delay: .1s;
+      }
+
+      *:nth-child(4) {
+        transition-delay: .15s;
+      }
+    }
+
+    em:first-child {
+      * {
+        transform: translateY(calc(-100% - 0.5em));
+      }
+    }
+
+    em:last-child {
+      * {
+        transform: translateY(0);
+      }
+    }
+
+    &::after {
+      transform: scaleX(1);
+      transform-origin: left center;
+    }
+  }
+}
+
+// v3
+.anim-btn-3 {
+  position: relative;
+  display: inline-flex;
+
+  --size: 48px;
+  width: var(--size);
+  height: var(--size);
+  border-radius: 50%;
+
+  cursor: pointer;
+
+  .icon {
+    --icon-size: 20px;
+    width: var(--icon-size);
+    height: var(--icon-size);
+    position: relative;
+    z-index: 2;
+    margin: auto; // align icon
+
+    color: white;
+  }
+  
+  &::before { // animated background
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: darkslateblue;
+    border-radius: inherit;
+    transition: transform .4s var(--ease-out-back);
+  }
+
+  &:hover {
+    &::before {
+      transform: scale(1.2);
+    }
+  }
+}
+
+// v4
+.anim-btn-4 {
+  position: relative;
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+
+  padding: var(--space-xs) var(--space-sm);
+  background-color: darkslateblue;
+  border-radius: 0.25em;
+  overflow: hidden;
+
+  line-height: 1;
+  text-decoration: none;
+  color: white;
+  @include fontSmooth;
+
+  span {
+    position: relative;
+    z-index: 2;
+  }
+
+  &::before {
+    content: '';
+    position: absolute;
+    z-index: 1;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    background-color: hsla(240, 67%, 94%, 0.5);
+    transform: skewX(-15deg) translate(calc(-100% - 0.5em));
+    transition: transform .3s;
+    pointer-events: none;
+  }
+
+  &:hover {
+    &::before {
+      transform: skewX(-15deg) translate(calc(100% + 0.5em));
+    }
+  }
 }

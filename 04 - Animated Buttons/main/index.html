@@ -10,18 +10,42 @@
 </head>
 <body>
   <div class="container max-width-sm padding-y-xxl">
-    <ul class="flex flex-center gap-sm">
+    <ul class="flex flex-center gap-md">
       <li>
-        <button class="reset anim-btn-1">Learn More</button>
+        <a class="anim-btn-1" href="#0">
+          <span>Learn More</span>
+
+          <div class="icon-wrapper" aria-hidden="true">
+            <svg class="icon margin-left-xxs" viewBox="0 0 20 20"><polyline points="8 5 13 10 8 15" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"/></svg>
+
+            <svg class="icon margin-left-xxs" viewBox="0 0 20 20"><polyline points="8 5 13 10 8 15" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"/></svg>
+          </div>
+        </a>
       </li>
 
-      <!-- <li>
-        <a class="anim-btn-2" href="#0">Explore</a>
+      <li>
+        <a class="anim-btn-2" href="#0" aria-label="Play">
+          <span>
+            <em><i>P</i><i>L</i><i>A</i><i>Y</i></em>
+            <em><i>P</i><i>L</i><i>A</i><i>Y</i></em>
+          </span>
+        </a>
       </li>
 
       <li>
-        <a class="reset anim-btn-3" href="#0">Play</a>
-      </li> -->
+        <button class="reset anim-btn-3">
+          <svg class="icon" viewBox="0 0 20 20">
+            <title>Play</title>
+            <path d="M17.524,9.148l-13-8A1,1,0,0,0,3,2V18a1,1,0,0,0,1.524.852l13-8a1,1,0,0,0,0-1.7Z"/>
+          </svg>
+        </button>
+      </li>
+
+      <li>
+        <a class="anim-btn-4" href="#0">
+          <span>Explore</span>
+        </a>
+      </li>
     </ul>
   </div>
 <script src="assets/js/scripts.js"></script>
