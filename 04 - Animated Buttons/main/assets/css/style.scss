@@ -6,27 +6,22 @@
 
 // --------------------------------
 
-// Animated Buttons
+// 🚀 Animated Buttons - Start
 
 // --------------------------------
 
 // v1
 .anim-btn-1 {
+  --border-radius: 0.25em;
+  --transition-duration: .3s;
   position: relative;
-  display: inline-flex;
-  justify-content: center;
-  align-items: center; // vertically align label + icon
-
-  padding: var(--space-xs) var(--space-sm);
-  background-color: lavender;
-  border-radius: 0.25em;
-  overflow: hidden;
-  clip-path: inset(0% 0% 0% 0% round 0.25em);
+  display: inline-block;
+  border-radius: var(--border-radius);
 
   line-height: 1;
   text-decoration: none;
   color: darkslateblue;
-  transition: .3s;
+  transition: var(--transition-duration);
   @include fontSmooth;
 
   cursor: pointer;
@@ -38,8 +33,8 @@
 
   .icon {
     display: block;
-    backface-visibility: hidden;
-    transition: .3s;
+    will-change: transform;
+    transition: var(--transition-duration);
   }
 
   .icon:first-child {
@@ -54,21 +49,7 @@
     color: lavender;
     transform: translateY(100%);
   }
-
-  &::after { // animated background
-    content: '';
-    position: absolute;
-    z-index: 1;
-    top: 50%;
-    left: -5%;
-    width: 110%;
-    height: 100%;
-    background-color: darkslateblue;
-    transform-origin: center bottom;
-    transform: skewY(10deg) scaleY(0);
-    transition: transform .3s;
-  }
-
+  
   &:hover {
     color: lavender;
 
@@ -82,7 +63,7 @@
       transform: translateY(0);
     }
 
-    &::after {
+    & .anim-btn-1__inner::after {
       transform: skewY(0deg) scaleY(2);
     }
   }
@@ -90,6 +71,32 @@
   &:focus {
     outline: none;
     box-shadow: 0 0 0 1px white, 0 0 0 3px darkslateblue;
+  }
+}
+
+.anim-btn-1__inner { // trick used to fix issue on Safari
+  position: relative;
+  display: inline-flex;
+  justify-content: center;
+  align-items: center; // vertically align label + icon
+  padding: var(--space-xs) var(--space-sm);
+
+  background-color: lavender;
+  overflow: hidden;
+  clip-path: inset(0% 0% 0% 0% round var(--border-radius));
+
+  &::after { // animated background
+    content: '';
+    position: absolute;
+    z-index: 1;
+    top: 50%;
+    left: -5%;
+    width: 110%;
+    height: 100%;
+    background-color: darkslateblue;
+    transform-origin: center bottom;
+    transform: skewY(10deg) scaleY(0);
+    transition: transform var(--transition-duration);
   }
 }
 
@@ -264,3 +271,9 @@
     }
   }
 }
+
+// --------------------------------
+
+// 🏁 Animated Buttons - End
+
+// --------------------------------
