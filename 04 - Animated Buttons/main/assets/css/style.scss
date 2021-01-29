@@ -111,24 +111,28 @@
   text-decoration: none;
 
   span {
+    position: relative;
     display: inline-flex;
     clip-path: polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%);
-    padding: 0.25em;
   }
 
   em {
+    display: inline-flex;
+
     * {
       color: darkslateblue;
-      display: inline-flex;
-      backface-visibility: hidden;
+      padding: 0.25em 0;
+      will-change: transform;
       transition: transform .3s;
     }
 
     &:last-child {
       position: absolute;
+      top: 0;
+      left: 0;
 
       * {
-        transform: translateY(calc(100% + 0.5em));
+        transform: translateY(100%);
       }
     }
   }
@@ -170,7 +174,7 @@
 
     em:first-child {
       * {
-        transform: translateY(calc(-100% - 0.5em));
+        transform: translateY(-100%);
       }
     }
 
