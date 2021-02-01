@@ -193,6 +193,7 @@
 //     background-color: darkslateblue;
 //     transform-origin: center bottom;
 //     transform: skewY(10deg) scaleY(0);
+//     will-change: transform;
 //     transition: transform var(--transition-duration);
 //   }
 // }
