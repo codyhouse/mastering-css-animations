@@ -8,6 +8,7 @@ Download the templates and follow the lessons on Youtube:
 - [Part 02 - Bouncing Ball (Design)](https://youtu.be/yYwF39nYhhw)
 - [Part 03 - Bouncing Ball (Animation)](https://youtu.be/Vqpy0dntHdk)
 - [Part 04 - Animated Buttons (Effect 1)](https://youtu.be/D_YtiEMLyXc)
+- [Part 05 - Animated Buttons (Effect 2)](https://youtu.be/NlokGlVU1IE)
 
 ## How to use the templates
 
